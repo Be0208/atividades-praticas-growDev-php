@@ -32,6 +32,12 @@ $minhaConta->saque(100);
 $minhaConta->deposito(50);
 $minhaConta->mostrarSaldo();
 
+//------------------- 4 --------------------
+require('./calculadora.php'); echo "<br> <h1>Exercicio 4</h1> </br>";
+$minhaCalculadora = new calculadora();
+
+$minhaCalculadora->visualizar();
+
 
 
 

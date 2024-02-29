@@ -9,7 +9,6 @@ class contador {
   }
   public function incrementar(){
     $this->contador++;
-    echo "<br> </br>";
     echo "Valor do contador agora é : $this->contador";
     echo "</br>";
     

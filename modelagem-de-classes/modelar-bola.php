@@ -16,8 +16,6 @@ class bolinha {
   }
 
   public function mostrarCor(){
-    echo "</br>";
-    echo "</br>";
     echo "Mostar cor: " . $this->cor;
 
   }
