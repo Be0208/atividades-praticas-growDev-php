@@ -1,8 +1,7 @@
 <?php
 
 class calculadora {
-
-  private $historico;
+  public $historico;
 
   public function __construct() {
     $this->historico = [];
