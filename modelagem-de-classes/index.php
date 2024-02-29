@@ -36,8 +36,17 @@ $minhaConta->mostrarSaldo();
 require('./calculadora.php'); echo "<br> <h1>Exercicio 4</h1> </br>";
 $minhaCalculadora = new calculadora();
 
+
+$minhaCalculadora->dividir(20, 5);
+$minhaCalculadora->dividir(20, 0);
+$minhaCalculadora->multiplicar(20, 5);
+$minhaCalculadora->somar(20, 5);
+$minhaCalculadora->subtrair(20, 5);
+$minhaCalculadora->subtrair(5, 20);
+
 $minhaCalculadora->visualizar();
 
+//------------------- 5 --------------------
 
 
 

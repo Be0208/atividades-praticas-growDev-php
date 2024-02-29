@@ -6,7 +6,7 @@ class calculadora {
 
   public function __construct() {
     $this->historico = [];
-}
+  }
 
 
 public function somar($num1, $num2) {
@@ -31,10 +31,9 @@ public function dividir($num1, $num2) {
 }
 
 public function visualizar(){
-  echo "Seu historico: ";
+  echo "Seu historico: <br>";
   foreach ($this->historico as $operaçoes){
-    echo "- $operaçoes";
+    echo " 🔘 $operaçoes. <br>";
   }
 }
-
 }
