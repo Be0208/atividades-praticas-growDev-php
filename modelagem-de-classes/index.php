@@ -52,7 +52,7 @@ require('./bombaCombustivel.php'); echo "<br> <h1>Exercicio 5</h1> </br>";
 $bomba = new bombaCombustivel("Gasolina", 5, 1000); // Tipo, Valor por litro, Quantidade em litros na bomba
 $bomba->abastecerPorValor(50);
 
-$bomba->nameGui()
+$bomba->nameGui();
 
 $bomba->alterarValor(10);
 $bomba->abastecerPorLitro(10);
