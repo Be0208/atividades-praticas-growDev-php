@@ -50,8 +50,8 @@ class bombaCombustivel {
     echo "Nova quantidade na bomba: $novaQuantidade L <br>";
 }
 
-public function nameGui(){
-  var_dump($this->nome = $nome)
+  public function nameGui(){
+    var_dump($this->nome = $nome);
   
 }
 
