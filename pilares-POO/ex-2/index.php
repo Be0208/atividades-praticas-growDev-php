@@ -17,7 +17,3 @@ $velhoImovel->imprimeDesconto();
 echo "get: ";
 print_r($velhoImovel->getDesconto());
 // print_r($velhoImovel);
-
-
-
-
