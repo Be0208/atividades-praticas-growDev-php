@@ -4,6 +4,7 @@ class bombaCombustivel {
   public $tipoCombustivel;
   public $valorLitro;
   public $quantidadeCombustivel;
+  public $nome = "guiumerr"
 
   public function __construct($tipoCombustivel, $valorLitro, $quantidadeCombustivel) {
     $this->tipoCombustivel = $tipoCombustivel;
@@ -47,6 +48,11 @@ class bombaCombustivel {
   public function alterarQuantidadeCombustivel($novaQuantidade) {
     $this->quantidadeCombustivel = $novaQuantidade;
     echo "Nova quantidade na bomba: $novaQuantidade L <br>";
+}
+
+  public function nameGui(){
+    var_dump($this->nome = $nome);
+  
 }
 
 
