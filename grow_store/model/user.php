@@ -1,6 +1,7 @@
 <?php
 
 require_once("./utils/next_id.php");
+require_once("./data/user-data.php");
 
 
 class User{
@@ -18,8 +19,9 @@ class User{
         $this->active=$active;
     }
 
-    public function add(){
-
+    public function add($userData){
+        array_push($userData, $this);
+        return $userData;
     }
 
     public function update(){
