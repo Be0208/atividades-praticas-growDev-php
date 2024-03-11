@@ -1,5 +1,6 @@
 <?php
 require_once("./model/user.php");
+require_once("./model/products.php");
 require_once('./data/user_data.php');
 
 $newUser = new User('pedro','pedro@bol.com','1234');
@@ -10,3 +11,7 @@ $userData = $newUser->add($userData);
 // User::list($userData);
 
 User::show(1, $userData);
+
+$newProduct = new Product("Sabao", "Sabao de amendoas", "R$ 15,00", true, "5 estrelas");
+
+Product::show(1, $productData);
