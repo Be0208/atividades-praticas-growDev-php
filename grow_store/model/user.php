@@ -20,8 +20,8 @@ class User{
     public function add($userData){
         array_push($userData, $this);
         return $userData;
-    }
-    
+    }   
+
     public function update(){
 
     }
