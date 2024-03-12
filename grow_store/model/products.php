@@ -28,7 +28,7 @@ class Product {
 
   }
   
-  public static function show2($id, $productData){
+  public static function show($id, $productData){
 
     $filtered = array_values(array_filter($productData, function ($item) use ($id) {
         return $item->id == $id;

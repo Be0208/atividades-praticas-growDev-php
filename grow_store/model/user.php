@@ -1,6 +1,7 @@
 <?php
 
 require_once("./utils/next_id.php");
+require_once("./utils/random_id.php");
 
 class User
 {
@@ -12,7 +13,7 @@ class User
 
     public function __construct($nameP, $emailP, $passwordP, $active = true)
     {
-        $this->id = createId();
+        $this->id = randomId();
         $this->name = $nameP;
         $this->email = $emailP;
         $this->password = $passwordP;
@@ -23,6 +24,10 @@ class User
     {
         array_push($userData, $this);
         return $userData;
+    }
+
+    public function getId(){
+        return $this->id;
     }
 
     public function update(){
