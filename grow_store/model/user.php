@@ -31,12 +31,14 @@ class User
 
     public static function show($idP, $userData)
     {
-        $filtered = array_filter($userData, function ($item) use ($idP) {
+        $filtered = array_values(array_filter($userData, function ($item) use ($idP) {
             return $item->id == $idP;
-        });
+        })
+        );
                 
         if ($filtered) {
             echo "Nome: " . $filtered[0]->name . "<br>";
+            echo "id: " . $filtered[0]->id . "<br>";
             echo "E-mail: " . $filtered[0]->email . "<br>";
             echo $filtered[0]->active ? "Status: Ativo!" : "Status: Inativo!" . "<br>";
             echo "<br><hr>";

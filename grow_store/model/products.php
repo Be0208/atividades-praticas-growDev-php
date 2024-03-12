@@ -1,15 +1,17 @@
 <?php
 
+require_once("./utils/next_id.php");
+
 class Product {
   private $id;
-  protected $name;
-  protected $description;
-  protected $price;
-  protected $avaliable;
-  protected $score;
+  private $name;
+  private $description;
+  private $price;
+  private $avaliable;
+  private $score;
 
-  public function __construct($name, $description, $price, $avaliable, $score, $id = 1,) {
-    $this->id = $id;
+  public function __construct($name, $description, $price, $avaliable, $score) {
+    $this->id = createId();
     $this->name = $name;
     $this->description = $description;
     $this->price = $price;
@@ -28,9 +30,11 @@ class Product {
   
   public static function show($id, $productData){
 
-    $filtered = array_filter($productData, function ($item) use ($id) {
-      return $item->id == $id;
-    });
+    $filtered = array_values(array_filter($productData, function ($item) use ($id) {
+        return $item->id == $id;
+      })
+      );
+      
 
     if ($filtered) {
       echo "Nome: " . $filtered[0]->name . "<br>";
@@ -50,12 +54,14 @@ class Product {
 
   public static function list($productData)
   {
-      echo "Lista de usuários<br><hr>";
+      echo "Lista de Produtos<br><hr>";
       foreach ($productData as $value) {
-          echo "Nome: " . $value->name . "<br>";
-          echo "E-mail: " . $value->email . "<br>";
-          echo $value->active ? "Status: Ativo!" : "Status: Inativo!" . "<br>";
-          echo "<br><hr>";
+        echo "Nome: " . $value->name . "<br>";
+        echo "Description: " . $value->description . "<br>";
+        echo "Price: " . $value->price . "<br>";
+        echo "Score: " . $value->score . "<br>";
+        echo $value->avaliable ? "Status: Positivo!" : "Status: Negativo!" . "<br>";
+        echo "<br><hr>";
       }
   }
   

@@ -3,5 +3,6 @@
 $id_number=1;
 
 function createId(){
-    return 1;
+    global $id_number;
+    return $id_number++;
 }
