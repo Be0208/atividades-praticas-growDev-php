@@ -25,8 +25,7 @@ class User
         return $userData;
     }
 
-    public function update()
-    {
+    public function update(){
     }
 
     public static function show($idP, $userData)
@@ -38,7 +37,6 @@ class User
                 
         if ($filtered) {
             echo "Nome: " . $filtered[0]->name . "<br>";
-            echo "id: " . $filtered[0]->id . "<br>";
             echo "E-mail: " . $filtered[0]->email . "<br>";
             echo $filtered[0]->active ? "Status: Ativo!" : "Status: Inativo!" . "<br>";
             echo "<br><hr>";
