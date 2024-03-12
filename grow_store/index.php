@@ -36,6 +36,3 @@ $commentData = $newComment2->add3($commentData);
 Comment::list($commentData);
 // Product::show(3, $productData);
 // Product::show(4, $productData);
-
-
-
