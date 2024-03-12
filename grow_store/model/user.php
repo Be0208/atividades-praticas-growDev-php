@@ -11,8 +11,7 @@ class User
     private $password;
     private $active;
 
-    public function __construct($nameP, $emailP, $passwordP, $active = true)
-    {
+    public function __construct($nameP, $emailP, $passwordP, $active = true){
         $this->id = randomId();
         $this->name = $nameP;
         $this->email = $emailP;
@@ -20,8 +19,7 @@ class User
         $this->active = $active;
     }
 
-    public function add($userData)
-    {
+    public function add($userData){
         array_push($userData, $this);
         return $userData;
     }
@@ -33,8 +31,7 @@ class User
     public function update(){
     }
 
-    public static function show($idP, $userData)
-    {
+    public static function show($idP, $userData){
         $filtered = array_values(array_filter($userData, function ($item) use ($idP) {
             return $item->id == $idP;
         })
@@ -50,12 +47,10 @@ class User
         }
     }
 
-    public function delete($idP)
-    {
+    public function delete($idP){
     }
 
-    public static function list($userData)
-    {
+    public static function list($userData){
         echo "Lista de usuários<br><hr>";
         foreach ($userData as $value) {
             echo "Nome: " . $value->name . "<br>";

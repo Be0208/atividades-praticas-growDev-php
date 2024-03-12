@@ -48,22 +48,18 @@ class Comment {
     }
   }
 
-  public function delete($idP)
-  {
+  public function delete($idP){
   }
 
-  public static function list($commentData)
-  {
-      echo "Lista de Produtos<br><hr>";
-      foreach ($commentData as $value) {
-        echo "USER ID: " . $value->userId . "<br>";
-        echo "content: " . $value->content . "<br>";
-        echo "createdAt: " . $value->createdAt . "<br>";
-        echo "Score: " . $value->score . "<br>";
-        echo $value->productId ? "Status: Positivo!" : "Status: Negativo!" . "<br>";
-        echo "<br><hr>";
-      }
+  public static function list($commentData){
+    echo "Lista de Produtos<br><hr>";
+    foreach ($commentData as $value) {
+      echo "USER ID: " . $value->userId . "<br>";
+      echo "content: " . $value->content . "<br>";
+      echo "createdAt: " . $value->createdAt . "<br>";
+      echo "Score: " . $value->score . "<br>";
+      echo $value->productId ? "Status: Positivo!" : "Status: Negativo!" . "<br>";
+      echo "<br><hr>";
+    }
   }
-  
-  
 }

@@ -48,12 +48,10 @@ class Product {
     }
   }
 
-  public function delete($idP)
-  {
+  public function delete($idP){
   }
 
-  public static function list($productData)
-  {
+  public static function list($productData){
       echo "Lista de Produtos<br><hr>";
       foreach ($productData as $value) {
         echo "Nome: " . $value->name . "<br>";
@@ -63,7 +61,5 @@ class Product {
         echo $value->avaliable ? "Status: Positivo!" : "Status: Negativo!" . "<br>";
         echo "<br><hr>";
       }
-  }
-  
-  
+  } 
 }
