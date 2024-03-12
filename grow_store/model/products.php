@@ -17,7 +17,7 @@ class Product {
     $this->score = $score;
   }
 
-  public function add($productData){
+  public function add2($productData){
     array_push($productData, $this);
     return $productData;
   }
