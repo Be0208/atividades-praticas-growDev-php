@@ -1,7 +1,5 @@
 <?php
-
-require_once("./utils/next_id.php");
-require_once("./utils/random_id.php");
+require_once('./utils/next_id.php');
 
 class User
 {
@@ -11,15 +9,17 @@ class User
     private $password;
     private $active;
 
-    public function __construct($nameP, $emailP, $passwordP, $active = true){
-        $this->id = randomId();
+    public function __construct($nameP, $emailP, $passwordP, $active = true)
+    {
+        $this->id = createId();
         $this->name = $nameP;
         $this->email = $emailP;
         $this->password = $passwordP;
         $this->active = $active;
     }
 
-    public function add($userData){
+    public function add($userData)
+    {
         array_push($userData, $this);
         return $userData;
     }
@@ -27,15 +27,19 @@ class User
     public function getId(){
         return $this->id;
     }
-
-    public function update(){
+    public function update()
+    {
     }
 
-    public static function show($idP, $userData){
+    public static function show($idP, $userData)
+    {
         $filtered = array_values(array_filter($userData, function ($item) use ($idP) {
-            return $item->id == $idP;
+            return $item->id == $idP; 
         })
-        );
+    );
+
+    var_dump($filtered);
+
                 
         if ($filtered) {
             echo "Nome: " . $filtered[0]->name . "<br>";
@@ -47,10 +51,12 @@ class User
         }
     }
 
-    public function delete($idP){
+    public function delete($idP)
+    {
     }
 
-    public static function list($userData){
+    public static function list($userData)
+    {
         echo "Lista de usuários<br><hr>";
         foreach ($userData as $value) {
             echo "Nome: " . $value->name . "<br>";
