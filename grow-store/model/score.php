@@ -3,8 +3,7 @@ require_once('./utils/next_id.php');
 require_once('./utils/timestamp.php');
 require_once('./utils/formatStars.php');
 
-class Score
-{
+class Score{
     private $id;
     private $score;
     private $userId;
@@ -12,8 +11,7 @@ class Score
     private $createdAt;
     private $modifiedAt;
 
-    public function __construct($score, $userId, $productId)
-    {
+    public function __construct($score, $userId, $productId){
         $this->id = createId();
         $this->score = $score;
         $this->userId = $userId;
@@ -38,6 +36,7 @@ class Score
         return $this->productId;
     }
    
+
     public function getScore(){
         return $this->score;
     }
@@ -45,6 +44,8 @@ class Score
     public function update()
     {
     }
+
+
 
     public static function show($id, $scoreData)
     {
@@ -65,9 +66,11 @@ class Score
         }
     }
 
-    public function delete($idP)
-    {
+    public function delete($idP){
     }
+
+
+    
 
     public static function list($scoreData)
     {
