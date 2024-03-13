@@ -1,12 +1,12 @@
 <?php
-require_once("./model/user.php");
-require_once('./data/user_data.php');
+require_once("./model/comment.php");
 require_once('./model/product.php');
+require_once("./model/user.php");
 require_once("./model/score.php");
 
 require_once('./data/product_data.php');
 require_once('./data/comment_data.php');
-require_once("./model/comment.php");
+require_once('./data/user_data.php');
 require_once('./data/score_data.php');
 
 //usuarios
