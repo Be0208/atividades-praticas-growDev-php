@@ -3,6 +3,7 @@ require_once('./utils/next_id.php');
 require_once('./utils/timestamp.php');
 require_once('./utils/formatStars.php');
 
+
 class Score{
     private $id;
     private $score;
@@ -35,29 +36,28 @@ class Score{
     public function getProductId(){
         return $this->productId;
     }
-   
 
     public function getScore(){
         return $this->score;
     }
-    
-    public function update()
-    {
+
+
+
+    public function update($newScore){
+        $this->score = $newScore;
+        $this->modifiedAt = timestamp();
     }
 
 
 
-    public static function show($id, $scoreData)
-    {
+    public static function show($id, $scoreData){
         $filtered = array_values(array_filter($scoreData, function ($item) use ($id) {
                 return $item->id == $id; 
             })
         );
-
-              
+     
         if ($filtered) {
             $score = $filtered[0];
-
             echo "Avaliação: " . formatStars($score->score) . "<br>";
             echo "Data: " . $score->modifiedAt->format('d/m/Y H\hi\m') . "<br>";
             echo "<br><hr>";
@@ -66,15 +66,24 @@ class Score{
         }
     }
 
-    public function delete($idP){
+
+
+    public function delete(&$scoreData){
+        foreach ($scoreData as $key => $score) {
+            if ($score->id == $this->id) {
+                unset($scoreData[$key]);
+                 echo "Score escluido com sucesso \n";
+                return true;
+            }
+        }
+        return false;
     }
 
 
-    
 
     public static function list($scoreData)
     {
-        echo "Lista de avaliações<br><hr>";
+        echo "<br> Lista de avaliações: <br><hr>";  
         foreach ($scoreData as $score) {
 
             $formatedScore = '';

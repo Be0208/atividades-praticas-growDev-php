@@ -2,40 +2,52 @@
 require_once("./model/user.php");
 require_once('./data/user_data.php');
 require_once('./model/product.php');
+require_once("./model/score.php");
+
 require_once('./data/product_data.php');
 require_once('./data/comment_data.php');
 require_once("./model/comment.php");
-require_once("./model/score.php");
 require_once('./data/score_data.php');
 
-
+//usuarios
 $newUser = new User('pedro','pedro@bol.com','1234');
 // $newUser2 = new User('José','jose@bol.com','5555');
-$userData = $newUser->add($userData);
+$userData = $newUser->add($userData); //--------------------Adicionando
 
-// $userData = $newUser2->add($userData);
+
+echo '<h1>Produto: </h1> ';
 
 $newProduct = new Product('Lápis', 'Escreve bem', '2');
-$productData = $newProduct->add($productData);
+$productData = $newProduct->add($productData); //--------------------Adicionando
+Product::show($newProduct->getId() , $productData); //--------------------mostrando
+$newProduct->delete($productData); //--------------------deletando
+
+
+echo '<h1>Comentario: </h1> ';
 
 $newComment = new Comment('12.03', 'Produto muito bom', $newUser->getId(), '1');
-$commentData = $newComment->add($commentData);
+$commentData = $newComment->add($commentData); //--------------------Adicionando
 
-Comment::show($newComment->getId() , $commentData);
+$newComment->update("Lapis muito bom", 5); //--------------------Atualizando
 
-$score1 = new Score(1, $newUser->getId(), $newProduct->getId());
-$score2 = new Score(2, $newUser->getId(), $newProduct->getId());
-$score3 = new Score(3, $newUser->getId(), $newProduct->getId());
-$score4 = new Score(4, $newUser->getId(), $newProduct->getId());
-$score5 = new Score(5, $newUser->getId(), $newProduct->getId());
-$score6 = new Score(10, $newUser->getId(), $newProduct->getId());
+Comment::show($newComment->getId() , $commentData); //--------------------mostrando
+$newComment->delete($commentData);//--------------------deletando
+  
 
-$scoreData = $score1->add($scoreData);
-$scoreData = $score2->add($scoreData);
-$scoreData = $score3->add($scoreData);
-$scoreData = $score4->add($scoreData);
-$scoreData = $score5->add($scoreData);
-$scoreData = $score6->add($scoreData);
+echo '<h1>Avaliaçoes: </h1> ';
+// Exibir a pontuação atualizada
+$score = new Score(1, $newUser->getId(), $newProduct->getId());
 
-$newProduct->showScore($scoreData);
 
+$score->update(4); //--------------------Atualizando
+// Score::list($scoreData); //--------------------mostrando lista
+
+// Score::show($score->getId(), [$score]);//--------------------mostrando
+
+$scoreData = [$score];
+// $score->delete($scoreData);//--------------------deletando
+
+$score1 = new Score(5, 1, 123);
+$scoreData = [$score1, $score];
+
+Score::list($scoreData); //--------------------mostrando lista

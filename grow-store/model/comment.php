@@ -21,7 +21,6 @@ class Comment
 
     public function add($commentData)
     {
-        var_dump($commentData);
         array_push($commentData, $this);
         return $commentData;
     }
@@ -29,8 +28,11 @@ class Comment
     public function getId(){
         return $this->id;
     }
-    public function update()
+
+    public function update($newContent, $newScore)
     {
+        $this->content = $newContent;
+        $this->score = $newScore;
     }
 
     public static function show($idP, $commentData)
@@ -51,14 +53,21 @@ class Comment
         }
     }
 
-    public function delete($idP)
+    public function delete(&$commentData)
     {
+        foreach ($commentData as $key => $comment) {
+            if ($comment->id == $this->id) {
+                unset($commentData[$key]);
+                return true;
+            }
+        }
+        return false;
     }
 
-    public static function list($userData)
+    public static function list($commentData)
     {
         echo "Lista de comentários<br><hr>";
-        foreach ($userData as $value) {
+        foreach ($commentData as $value) {
             echo "Conteúdo: " . $value->content . "<br>";
             echo "Data: " . $value->createdAt . "<br>";
             echo "Avaliação: " . $value->score . "<br>";

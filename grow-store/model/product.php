@@ -52,8 +52,15 @@ class Product
         }
     }
 
-    public function delete($idP)
+    public function delete(&$productData)
     {
+        foreach ($productData as $key => $product) {
+            if ($product->id == $this->id) {
+                unset($productData[$key]);
+                return true;
+            }
+        }
+        return false;
     }
 
     public static function list($userData)
