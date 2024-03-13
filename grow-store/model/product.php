@@ -1,6 +1,7 @@
 <?php
 require_once('./utils/next_id.php');
 require_once('./utils/formatStars.php');
+require_once('./utils/timestamp.php');
 
 class Product
 {

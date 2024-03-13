@@ -1,5 +1,9 @@
 <?php
 require_once('./utils/next_id.php');
+require_once('./utils/formatStars.php');
+require_once('./utils/timestamp.php');
+
+
 
 class Comment
 {
@@ -44,7 +48,7 @@ class Comment
                
         if ($filtered) {
             echo "Conteúdo: " . $filtered[0]->content . "<br>";
-            echo "Data: " . $filtered[0]->createdAt . "<br>";
+            echo "Data: " . $filtered[0]->createdAt->format('d/m/Y H\hi\m') . "<br>";
             echo "Avaliação: " . $filtered[0]->score . "<br>";
             echo "ID:" . $filtered[0]->id . "<br>";
         

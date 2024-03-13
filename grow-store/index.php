@@ -17,7 +17,7 @@ $userData = $newUser->add($userData); //--------------------Adicionando
 
 echo '<h1>Produto: </h1> ';
 
-$newProduct = new Product('Lápis', 'Escreve bem', '2');
+$newProduct = new Product('Lápis', 'Escreve bem', "R$2,00");
 $productData = $newProduct->add($productData); //--------------------Adicionando
 Product::show($newProduct->getId() , $productData); //--------------------mostrando
 $newProduct->delete($productData); //--------------------deletando
@@ -25,10 +25,10 @@ $newProduct->delete($productData); //--------------------deletando
 
 echo '<h1>Comentario: </h1> ';
 
-$newComment = new Comment('12.03', 'Produto muito bom', $newUser->getId(), '1');
+$newComment = new Comment(timestamp(), 'Produto muito bom', $newUser->getId(), formatStars(1));
 $commentData = $newComment->add($commentData); //--------------------Adicionando
 
-$newComment->update("Lapis muito bom", 5); //--------------------Atualizando
+$newComment->update("Lapis muito bom", formatStars(5)); //--------------------Atualizando
 
 Comment::show($newComment->getId() , $commentData); //--------------------mostrando
 $newComment->delete($commentData);//--------------------deletando
