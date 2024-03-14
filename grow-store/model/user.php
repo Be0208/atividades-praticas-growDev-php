@@ -25,8 +25,7 @@ class User
     public function getId(){
         return $this->id;
     }
-    public function update(){
-    }
+    
 
     public static function show($idP, $userData){
         $filtered = array_values(array_filter($userData, function ($item) use ($idP) {
@@ -45,8 +44,10 @@ class User
             echo "Usuário não encontrado.";
         }
     }
+public function update(){
+    }
 
-    public function delete($idP){
+public function delete(){
     }
 
     public static function list($userData){

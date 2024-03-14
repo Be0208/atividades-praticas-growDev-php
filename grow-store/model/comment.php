@@ -62,6 +62,7 @@ class Comment
         foreach ($commentData as $key => $comment) {
             if ($comment->id == $this->id) {
                 unset($commentData[$key]);
+                echo "Comentario escluido com sucesso \n";
                 return true;
             }
         }
@@ -76,7 +77,6 @@ class Comment
             echo "Data: " . $value->createdAt . "<br>";
             echo "Avaliação: " . $value->score . "<br>";
             echo "ID: " . $value->id . "<br> <hr>";
-            
         }
     }
 }

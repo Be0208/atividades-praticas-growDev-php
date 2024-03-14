@@ -30,6 +30,7 @@ class Product
     public function getId(){
         return $this->id;
     }
+
     public function update()
     {
     }
@@ -58,6 +59,7 @@ class Product
         foreach ($productData as $key => $product) {
             if ($product->id == $this->id) {
                 unset($productData[$key]);
+                echo "Produto escluido com sucesso \n";
                 return true;
             }
         }

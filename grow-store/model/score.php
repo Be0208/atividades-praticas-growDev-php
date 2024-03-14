@@ -72,7 +72,7 @@ class Score{
         foreach ($scoreData as $key => $score) {
             if ($score->id == $this->id) {
                 unset($scoreData[$key]);
-                 echo "Score escluido com sucesso \n";
+                echo "Score escluido com sucesso \n";
                 return true;
             }
         }
