@@ -62,7 +62,7 @@ class Comment
         foreach ($commentData as $key => $comment) {
             if ($comment->id == $this->id) {
                 unset($commentData[$key]);
-                echo "Comentario escluido com sucesso \n";
+                echo "Comentario escluido com sucesso <br><hr>";
                 return true;
             }
         }
@@ -71,10 +71,10 @@ class Comment
 
     public static function list($commentData)
     {
-        echo "Lista de comentários<br><hr>";
+        echo "<h2>Lista de comentários: </h2><hr>";
         foreach ($commentData as $value) {
             echo "Conteúdo: " . $value->content . "<br>";
-            echo "Data: " . $value->createdAt . "<br>";
+            echo "Data: " . $value->createdAt->format('d/m/Y H\hi\m') . "<br>";
             echo "Avaliação: " . $value->score . "<br>";
             echo "ID: " . $value->id . "<br> <hr>";
         }

@@ -59,7 +59,7 @@ class Product
         foreach ($productData as $key => $product) {
             if ($product->id == $this->id) {
                 unset($productData[$key]);
-                echo "Produto escluido com sucesso \n";
+                echo "Produto escluido com sucesso <br><hr>";
                 return true;
             }
         }
