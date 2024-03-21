@@ -27,7 +27,7 @@ Product::show($newProduct->getId() , $productData); //--------------------mostra
 
 $newProduct->delete($productData); //--------------------deletando
 
-Product::show($newProduct2->getId() , $productData); //--------------------mostrando
+Product::list($productData); //--------------------mostrando
 
 
 echo '<h1>Comentario: </h1> ';

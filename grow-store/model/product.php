@@ -41,8 +41,7 @@ class Product
             return $item->id == $idP; 
         })
     );
-
-                
+        echo "Produto numero: " . $filtered[0]->id . "<br><hr>"; 
         if ($filtered) {
             echo "Nome: " . $filtered[0]->name . "<br>";
             echo "Descrição " . $filtered[0]->description . "<br>";
@@ -59,7 +58,7 @@ class Product
         foreach ($productData as $key => $product) {
             if ($product->id == $this->id) {
                 unset($productData[$key]);
-                echo "Produto escluido com sucesso <br><hr>";
+                echo "Produto excluido com sucesso <br><hr>";
                 return true;
             }
         }
@@ -71,8 +70,9 @@ class Product
         echo "Lista de produtos:<br><hr>";
         foreach ($userData as $value) {
             echo "Nome: " . $value->name . "<br>";
-            echo "E-mail: " . $value->email . "<br>";
-            echo $value->active ? "Status: Ativo!" : "Status: Inativo!" . "<br>";
+            echo "Descrição " . $value->description . "<br>";
+            echo "Preço: " . $value->price . "<br>";
+            echo $value->available ? "Status: Disponível!" : "Status: Indisponível!" . "<br>";
             echo "<br><hr>";
         }
     }
